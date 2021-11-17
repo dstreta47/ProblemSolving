@@ -1,3 +1,4 @@
+#O(n)
 def two_sum(list1,target):
     dict1= {}
     for i in range(len(list1)):
@@ -8,10 +9,20 @@ def two_sum(list1,target):
             dict1[i] = True   
             
 
-    print(dict1)        
+    return -1       
         
-    
-
+ #O(nlogn)   
+def two_sum_bin(list1,target):
+    i = 0
+    j = len(list1)-1
+    list1 = sorted(list1)
+    while(len(list1)-1):
+        if list1[i]+list1[j] == target:
+            return [list1[i],list1[j]]
+        elif list1[i]+list1[j] < target: 
+            i+=1
+        else:
+            j-=1   
 
 
 list1 = [3,5,-4,8,11,1,-1,6]
